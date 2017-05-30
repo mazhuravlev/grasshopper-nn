@@ -31,6 +31,7 @@ let app = new Vue({
             this.result = myNetwork.activate([this.slider1, this.slider2, this.slider3])[0];
         },
         train: function () {
+            myNetwork.reset();
             const tsPromise = Promise.resolve(JSON.parse(this.trainingSet));
             const options = {
                 rate: .1,
